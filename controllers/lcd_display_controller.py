@@ -40,8 +40,7 @@ class LCDDisplayController:
         self.display.lcd_display_string("is powered off..", 2)
         time.sleep(3)
         self.display.lcd_clear()
-
-
+        
     def clearDisplay(self):
         self.display.lcd_clear()
 

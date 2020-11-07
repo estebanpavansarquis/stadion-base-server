@@ -17,10 +17,6 @@ class BluetoothController:
             received_data = self.client_socket.recv(1024)
             print('received_data ' + received_data)
             if len(received_data):
-                if received_data == 'exit':
-                    self.disconnect()
-                    print ('Stadion is powered off')
-                    exit()
                 return received_data
             else:
                 return ''

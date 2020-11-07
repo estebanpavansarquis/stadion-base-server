@@ -20,8 +20,14 @@ def main():
                 bluetooth_controller.disconnect()
                 display_controller.displayDisconnectionMsg(bluetooth_controller.device_name)
                 break
-            else:
-                bluetooth_controller.send(response_msg)
+
+            if received_data == 'exit':
+                bluetooth_controller.disconnect()
+                display_controller.displayPowerOffMsg()
+                break
+            
+            bluetooth_controller.send(response_msg)
+    
     display_controller.displayPowerOffMsg()   
 
 if __name__ == '__main__':
