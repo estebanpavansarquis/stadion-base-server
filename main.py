@@ -23,8 +23,6 @@ def main():
                     break
 
                 if received_data == 'exit':
-                    bluetooth_controller.disconnect()
-                    display_controller.displayPowerOffMsg()
                     exit()
                 
                 bluetooth_controller.send(response_msg)
