@@ -5,7 +5,7 @@ import time
 class LCDDisplayController:
 
     def __init__(self):
-        self.dispaly = lcddriver.lcd()
+        self.display = lcddriver.lcd()
 
     def displayWelcomeMsg(self):
         self.display.lcd_clear()
@@ -18,7 +18,7 @@ class LCDDisplayController:
         self.display.lcd_display_string("Connect BTH to", 1) 
         self.display.lcd_display_string("ID: stadion", 2)
 
-    def clearDisplay(seld):
+    def clearDisplay(self):
         self.display.lcd_clear()
 
 
