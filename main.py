@@ -25,7 +25,7 @@ def main():
                 if received_data == 'exit':
                     bluetooth_controller.disconnect()
                     display_controller.displayPowerOffMsg()
-                    break
+                    exit()
                 
                 bluetooth_controller.send(response_msg)
                 
@@ -41,3 +41,5 @@ def main():
 if __name__ == '__main__':
     print('>>>>>>>>>>>>>>> Enjoy Stadion <<<<<<<<<<<<<<<')
     main()
+
+

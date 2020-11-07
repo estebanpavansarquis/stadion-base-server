@@ -12,7 +12,7 @@ class LCDDisplayController:
         self.display.lcd_clear()
         self.display.lcd_display_string("      ENJOY     ", 1) 
         self.display.lcd_display_string("     STADION    ", 2)
-        time.sleep(1)
+        time.sleep(2)
 
     def displayWaitingForConnectionsMsg(self):
         self.display.lcd_clear()
@@ -40,7 +40,7 @@ class LCDDisplayController:
         self.display.lcd_display_string("is powered off..", 2)
         time.sleep(3)
         self.display.lcd_clear()
-        
+
     def clearDisplay(self):
         self.display.lcd_clear()
 
