@@ -3,23 +3,26 @@ from controllers.lcd_display_controller import LCDDisplayController
 
 
 def main():
+    display_controller = LCDDisplayController()
+    
     while True:
-        display_controller = LCDDisplayController()
-
         display_controller.displayWaitingForConnectionsMsg()
         bluetooth_controller = BluetoothController()
+        display_controller.displayConnectedMsg(bluetooth_controller.device_name)
            
         while bluetooth_controller.isConnected():
 
             received_data = bluetooth_controller.read()
             response_msg = 'Received -> ' + received_data
+            display_controller.displayData(received_data)
 
             if received_data == 'disconnect':
                 bluetooth_controller.disconnect()
+                display_controller.displayDisconnectionMsg(bluetooth_controller.device_name)
                 break
             else:
                 bluetooth_controller.send(response_msg)
-                
+    display_controller.displayPowerOffMsg()   
 
 if __name__ == '__main__':
     print('>>>>>>>>>>>>>>> Enjoy Stadion <<<<<<<<<<<<<<<')
