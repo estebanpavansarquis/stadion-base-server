@@ -13,8 +13,10 @@ def main():
             
             while bluetooth_controller.isConnected():
 
+                response_msg = '2.0\n'
+                bluetooth_controller.send(response_msg)
+
                 received_data = bluetooth_controller.read()
-                response_msg = 'Received -> ' + received_data
                 display_controller.displayData(received_data)
 
                 if received_data == 'disconnect':
@@ -24,8 +26,6 @@ def main():
 
                 if received_data == 'exit':
                     exit()
-                
-                bluetooth_controller.send(response_msg)
                 
         display_controller.displayPowerOffMsg() 
     except Exception as e:
