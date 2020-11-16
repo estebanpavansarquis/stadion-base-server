@@ -1,6 +1,6 @@
 from controllers.bluetooth_controller import BluetoothController
 from controllers.lcd_display_controller import LCDDisplayController
-
+from time import sleep
 
 def main():
     display_controller = LCDDisplayController()
@@ -26,6 +26,8 @@ def main():
 
                 if received_data == 'exit':
                     exit()
+
+                sleep(1)
                 
         display_controller.displayPowerOffMsg() 
     except Exception as e:
